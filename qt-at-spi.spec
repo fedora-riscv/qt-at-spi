@@ -1,7 +1,7 @@
 
 Name:    qt-at-spi
-Version: 0.2
-Release: 2%{?dist}
+Version: 0.3.0
+Release: 1%{?dist}
 Summary: Qt plugin that bridges Qt's accessibility API to AT-SPI2 
 
 License: LGPLv2+
@@ -11,13 +11,12 @@ URL:     https://gitorious.org/qt-at-spi
 # git archive master --prefix=qt-at-spi/ | xz > qt-at-spi-%{snap}.tar.xz
 Source0: qt-at-spi-%{snap}.tar.xz
 %else
-# https://gitorious.org/qt-at-spi/qt-at-spi/archive-tarball/v0.2
+# https://gitorious.org/qt-at-spi/qt-at-spi/archive-tarball/v%{version}
 Source0: qt-at-spi-qt-at-spi-v%{version}.tar.gz
 %endif
 BuildRoot: %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 
 BuildRequires: pkgconfig(atspi-2)
-# qt-4.8.0-rc1 or newer, in particular
 BuildRequires: pkgconfig(QtDBus) >= 4.8.0
 BuildRequires: pkgconfig(QtGui) pkgconfig(QtXml)
 
@@ -63,8 +62,10 @@ make install INSTALL_ROOT=%{buildroot}
 %doc doc/html/*
 
 
-
 %changelog
+* Thu Apr 12 2012 Rex Dieter <rdieter@fedoraproject.org> 0.3.0-1
+- 0.3.0
+
 * Tue Apr 03 2012 Rex Dieter <rdieter@fedoraproject.org> 0.2-2
 - License: LGPLv2+
 - -doc subpkg
