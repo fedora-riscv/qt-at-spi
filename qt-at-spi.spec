@@ -1,6 +1,6 @@
 
 Name:    qt-at-spi
-Version: 0.3.0
+Version: 0.3.1
 Release: 1%{?dist}
 Summary: Qt plugin that bridges Qt's accessibility API to AT-SPI2 
 
@@ -63,6 +63,9 @@ make install INSTALL_ROOT=%{buildroot}
 
 
 %changelog
+* Mon Apr 16 2012 Jaroslav Reznik <jreznik@redhat.com> 0.3.1-1
+- 0.3.1, fixes accessing invalid objects
+
 * Thu Apr 12 2012 Rex Dieter <rdieter@fedoraproject.org> 0.3.0-1
 - 0.3.0
 
