@@ -1,7 +1,7 @@
 
 Name:    qt-at-spi
 Version: 0.3.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Qt plugin that bridges Qt's accessibility API to AT-SPI2 
 
 License: LGPLv2+
@@ -63,6 +63,9 @@ make install INSTALL_ROOT=%{buildroot}
 
 
 %changelog
+* Sat Jul 21 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.3.1-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_18_Mass_Rebuild
+
 * Mon Apr 16 2012 Jaroslav Reznik <jreznik@redhat.com> 0.3.1-1
 - 0.3.1, fixes accessing invalid objects
 
