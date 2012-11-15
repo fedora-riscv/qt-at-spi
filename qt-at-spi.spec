@@ -1,7 +1,7 @@
 
 Name:    qt-at-spi
 Version: 0.3.1
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Qt plugin that bridges Qt's accessibility API to AT-SPI2 
 
 License: LGPLv2+
@@ -15,6 +15,8 @@ Source0: qt-at-spi-%{snap}.tar.xz
 Source0: qt-at-spi-qt-at-spi-v%{version}.tar.gz
 %endif
 BuildRoot: %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
+
+Source1: qt-at-spi.sh
 
 BuildRequires: pkgconfig(atspi-2)
 BuildRequires: pkgconfig(QtDBus) >= 4.8.0
@@ -37,6 +39,8 @@ BuildArch: noarch
 %prep
 %setup -q -n %{name}-%{name}
 
+install -m644 -p %{SOURCE1} .
+
 
 %build
 %{_qt4_qmake}
@@ -54,6 +58,7 @@ make install INSTALL_ROOT=%{buildroot}
 
 %files
 %doc LICENSE README
+%doc qt-at-spi.sh
 %dir %{_qt4_plugindir}/accessiblebridge/
 %{_qt4_plugindir}/accessiblebridge/libqspiaccessiblebridge.so
 
@@ -63,6 +68,9 @@ make install INSTALL_ROOT=%{buildroot}
 
 
 %changelog
+* Thu Nov 15 2012 Rex Dieter <rdieter@fedoraproject.org> 0.3.1-3
+- include sample qt-at-spi.sh shell fragment
+
 * Sat Jul 21 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.3.1-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_18_Mass_Rebuild
 
