@@ -14,7 +14,6 @@ Source0: qt-at-spi-%{snap}.tar.xz
 # https://gitorious.org/qt-at-spi/qt-at-spi/archive-tarball/v%{version}
 Source0: qt-at-spi-qt-at-spi-v%{version}.tar.gz
 %endif
-BuildRoot: %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 
 Source1: qt-at-spi.sh
 
