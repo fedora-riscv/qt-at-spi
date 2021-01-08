@@ -17,6 +17,7 @@ Source0: qt-at-spi-qt-at-spi-v%{version}.tar.gz
 
 Source1: qt-at-spi.sh
 
+BuildRequires: make
 BuildRequires: gcc-c++
 BuildRequires: pkgconfig(atspi-2)
 BuildRequires: pkgconfig(QtDBus) >= 4.8.0
